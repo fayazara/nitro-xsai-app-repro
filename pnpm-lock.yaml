@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@xsai/generate-object':
+        specifier: 0.2.0-beta.3
+        version: 0.2.0-beta.3
     devDependencies:
       nitropack:
         specifier: latest
@@ -784,6 +788,18 @@ packages:
   '@whatwg-node/server@0.9.71':
     resolution: {integrity: sha512-ueFCcIPaMgtuYDS9u0qlUoEvj6GiSsKrwnOLPp9SshqjtcRaR1IEHRjoReq3sXNydsF5i0ZnmuYgXq9dV53t0g==}
     engines: {node: '>=18.0.0'}
+
+  '@xsai/generate-object@0.2.0-beta.3':
+    resolution: {integrity: sha512-hhkE0p6uA83sih83qdtvRfKE4x4cF2Fse0CHzIlESJdphtzooinj7tVcxwhkPt6O/ad+ywtEiNFMCNlW1LhHmA==}
+
+  '@xsai/generate-text@0.2.0-beta.3':
+    resolution: {integrity: sha512-dE01PDM3WDsI9FBzCxOyNQ8uqwae5/Y9hU16iO0DX/HAYSE44zgZ51Yaj3nEmf3idfZq66tswBAYh8eOHuA8Zg==}
+
+  '@xsai/shared-chat@0.2.0-beta.3':
+    resolution: {integrity: sha512-mjgo+YaUwXXxY1Bfvnj2aW3Brhu2Q8gr5SLaIfiOjI0oXuOxN1Fq3GPnBlVBkAzOLEwIQZ82Q2p9zUlBAljm3g==}
+
+  '@xsai/shared@0.2.0-beta.3':
+    resolution: {integrity: sha512-bpp848WfOCmmkuSePe7czB5Vy1lZxNqV1pSX/N0gZVXxfBQC6wVqkjoScl17v13hsThDbqB6dyrN4ca3mwVBog==}
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -2622,6 +2638,23 @@ packages:
     resolution: {integrity: sha512-GmqrO8WJ1NuzJ2DrziEI2o57jKAVIQNf8a18W3nCYU3H7PNWqCCVTeH6/NQE93CIllIgQS98rrmVkYgTX9fFJQ==}
     engines: {node: ^18.17.0 || >=20.5.0}
 
+  xsschema@0.2.0-beta.3:
+    resolution: {integrity: sha512-ViOZ1a1kAPHvFjDJp4ITeutdlbnEs56lx/NotlvcitwN04eHnU3DhR+P5GvXT7A+69qKrXAx0YrccvmfwGnUGw==}
+    peerDependencies:
+      '@valibot/to-json-schema': ^1.0.0
+      arktype: ^2.1.16
+      effect: ^3.14.5
+      zod-to-json-schema: ^3.24.5
+    peerDependenciesMeta:
+      '@valibot/to-json-schema':
+        optional: true
+      arktype:
+        optional: true
+      effect:
+        optional: true
+      zod-to-json-schema:
+        optional: true
+
   y18n@5.0.8:
     resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
     engines: {node: '>=10'}
@@ -3330,6 +3363,27 @@ snapshots:
       '@whatwg-node/fetch': 0.10.6
       '@whatwg-node/promise-helpers': 1.3.1
       tslib: 2.8.1
+
+  '@xsai/generate-object@0.2.0-beta.3':
+    dependencies:
+      '@xsai/generate-text': 0.2.0-beta.3
+      xsschema: 0.2.0-beta.3
+    transitivePeerDependencies:
+      - '@valibot/to-json-schema'
+      - arktype
+      - effect
+      - zod-to-json-schema
+
+  '@xsai/generate-text@0.2.0-beta.3':
+    dependencies:
+      '@xsai/shared': 0.2.0-beta.3
+      '@xsai/shared-chat': 0.2.0-beta.3
+
+  '@xsai/shared-chat@0.2.0-beta.3':
+    dependencies:
+      '@xsai/shared': 0.2.0-beta.3
+
+  '@xsai/shared@0.2.0-beta.3': {}
 
   abbrev@1.1.1: {}
 
@@ -5254,6 +5308,8 @@ snapshots:
     dependencies:
       imurmurhash: 0.1.4
       signal-exit: 4.1.0
+
+  xsschema@0.2.0-beta.3: {}
 
   y18n@5.0.8: {}
 
